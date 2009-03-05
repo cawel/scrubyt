@@ -20,6 +20,7 @@ module Scrubyt
     end
 
     def to_s
+			return "" if @result.nil?
       text = (@result.is_a? String) ? @result : @result.inner_html.gsub(/<.*?>/, '')
       text = SharedUtils.unescape_entities(text)
       text.strip!
